@@ -1,4 +1,4 @@
-department-Cargo = Cargo
+department-Cargo = `
 department-Civilian = Civilian
 department-Command = Command
 department-Engineering = Engineering

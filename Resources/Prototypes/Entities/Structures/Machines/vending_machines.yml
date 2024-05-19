@@ -60,10 +60,10 @@
   - type: ActivatableUIRequiresPower
   - type: UserInterface
     interfaces:
-    - key: enum.VendingMachineUiKey.Key
-      type: VendingMachineBoundUserInterface
-    - key: enum.WiresUiKey.Key
-      type: WiresBoundUserInterface
+      enum.VendingMachineUiKey.Key:
+        type: VendingMachineBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
   - type: WiresPanel
   - type: Wires
     boardName: wires-board-name-vendingmachine
@@ -93,7 +93,6 @@
   - type: LitOnPowered
   - type: ApcPowerReceiver
     powerLoad: 200
-    priority: Low
   - type: Actions
   # - type: SentienceTarget # Lagrange
   #   flavorKind: station-event-random-sentience-flavor-mechanical # Lagrange
@@ -226,7 +225,7 @@
     energy: 1.3
     color: "#ffb0b0"
   - type: AccessReader
-    access: [["HeadOfPersonnel"], ["HeadOfSecurity"]] # Frontier - Added sheriff access
+    access: [["HeadOfPersonnel"]]
   - type: MarketModifier
     mod: 5
 
@@ -1273,7 +1272,7 @@
   parent: VendingMachine
   id: VendingMachineSalvage
   name: Salvage Vendor
-  description: A dwarves best friend!
+  description: A dwarf's best friend!
   components:
   - type: VendingMachine
     pack: SalvageEquipmentInventory
@@ -1341,12 +1340,17 @@
   parent: VendingMachine
   name: vending machine
   abstract: true
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wallmount
   components:
   - type: Sprite
     drawdepth: WallMountedItems
     snapCardinals: false
+  - type: Rotatable
   - type: WallMount
-    arc: 180
+    arc: 175
   - type: Transform
     noRot: false
 
@@ -1888,6 +1892,7 @@
     denyState: deny-unshaded
     ejectDelay: 1.9
     soundVend: /Audio/Items/bikehorn.ogg
+    initialStockQuality: 1.0 # Nobody knows how Honk does it, but their vending machines always seem well-stocked...
   - type: Sprite
     sprite: Structures/Machines/VendingMachines/happyhonk.rsi
     layers:
@@ -1978,6 +1983,6 @@
     normalState: normal
     denyState: deny
     ejectDelay: 2
-  - type: AccessReader
-    access: [["SyndicateAgent"]]
+  - type: AccessReader # Frontier
+#    access: [["SyndicateAgent"]] # Frontier
 

@@ -5,7 +5,7 @@
   playTimeTracker: JobMercenary
   requirements:
     - !type:OverallPlaytimeRequirement
-      time: 10800
+      time: 108000
   startingGear: MercenaryGear
   canBeAntag: true
   icon: "JobIconMercenary"
@@ -19,21 +19,4 @@
 - type: startingGear
   id: MercenaryGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitMercenary
-    back: ClothingBackpackMercenaryFilled
-#    shoes: ClothingShoesBootsMercenaryFilled
-    shoes: ClothingShoesBootsMagMercenaryFilled # Give this only to new spawns
-    mask: ClothingMaskGasMercenary
-    eyes: ClothingEyesGlassesMercenary
-    gloves: ClothingHandsMercenaryGlovesCombat
-#    head: ClothingHeadHatBeretMercenary
-    head: ClothingHeadHelmetMercenary
-    outerClothing: ClothingOuterVestWebMercenary
-    id: MercenaryPDA
     ears: ClothingHeadsetAltMercenary
-    belt: ClothingBeltMercenaryWebbing
-    pocket1: WeaponPistolMk58Nonlethal
-  innerClothingSkirt: ClothingUniformJumpskirtMercenary
-  satchel: ClothingBackpackSatchelMercenaryFilled
-  duffelbag: ClothingBackpackDuffelMercenaryFilled
-  messenger: ClothingBackpackMessengerMercenaryFilled
